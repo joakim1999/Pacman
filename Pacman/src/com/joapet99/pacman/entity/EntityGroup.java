@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public enum EntityGroup {
 	PLAYER(true, true, new ArrayList<Integer>()),
-	ENEMY(false, true, new ArrayList<Integer>());
+	ENEMY(false, true, new ArrayList<Integer>()),
+	STATICOBJECT(false, true, new ArrayList<Integer>());
 	
 	private boolean canInteract;
 	private boolean canCollide;

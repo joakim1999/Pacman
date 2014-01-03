@@ -1,6 +1,8 @@
 package com.joapet99.pacman.movement;
 
+import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.geom.Vector2f;
 
 import com.joapet99.pacman.entity.Entity;
 
@@ -13,10 +15,6 @@ public class MovementInputHandler extends MovementHandler{
 	
 	public MovementInputHandler(float speed){
 		this.speed = speed;
-	}
-	
-	public void setInput(Input input){
-		this.in = input;
 	}
 	
 	public float getMovementOnX(){
@@ -39,5 +37,11 @@ public class MovementInputHandler extends MovementHandler{
 			movementOnY += speed;
 		}
 		return movementOnY;
+	}
+
+	@Override
+	public void update(GameContainer container, int delta) {
+		in = container.getInput();
+		movementChange = new Vector2f(getMovementOnX(), getMovementOnY());
 	}
 }
