@@ -25,4 +25,23 @@ public class Graph {
 		firstNode.addEdge(edge);
 		secondNode.addEdge(edge);
 	}
+	
+	public Node getNode(int id){
+		for(Node n : nodes){
+			if(n.id == id){
+				return n;
+			}
+		}
+		return null;
+	}
+	
+	public ArrayList<Edge> getEdges(){
+		ArrayList<Edge> edges = new ArrayList<Edge>();
+		for(Node n : nodes){
+			for(Edge e : n.edges){
+				edges.add(e);
+			}
+		}
+		return edges;
+	}
 }
