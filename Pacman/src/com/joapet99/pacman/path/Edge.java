@@ -8,4 +8,10 @@ public class Edge {
 		this.firstNode = firstNode;
 		this.secondNode = secondNode;
 	}
+	
+	public double findDistance(){
+		double xDelta = secondNode.getPosition().getX() - firstNode.getPosition().getX();
+		double yDelta = secondNode.getPosition().getY() - firstNode.getPosition().getY();
+		return Math.sqrt((xDelta * xDelta) + (yDelta * yDelta));
+	}
 }
